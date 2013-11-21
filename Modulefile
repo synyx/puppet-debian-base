@@ -1,0 +1,8 @@
+name 'synyx/debian_base'
+version '0.0.1'
+author 'Johannes Graf'
+license 'MIT License'
+project_page 'https://github.com/synyx/puppet-debian-base'
+source 'https://github.com/synyx/puppet-debian-base.git'
+summary 'Puppet module to prepare a debian based box'
+description 'A Puppet module to prepare a debian based box'
