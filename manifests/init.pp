@@ -21,7 +21,7 @@ class debian_base {
   }
 
   file { '/etc/motd':
-    content => 'Welcome to your Vagrant-built virtual machine!\nManaged by Puppet.\n',
+    content => 'This machine is managed by Puppet!',
     notify  => Exec['apt-get update'],
   }
 
