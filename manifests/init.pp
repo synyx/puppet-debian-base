@@ -43,6 +43,12 @@ class debian_base {
     }
   }
 
+  if !defined(Package['nano']){
+    package {'nano':
+      ensure => purged,
+    }
+  }
+
   if !defined(Package['bash-completion']) {
     package {'bash-completion':
       ensure => installed,
