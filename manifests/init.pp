@@ -16,10 +16,6 @@
 #
 class debian_base {
 
-  group { 'puppet':
-    ensure => 'present',
-  }
-
   file { '/etc/motd':
     content => 'This machine is managed by Puppet!',
     notify  => Exec['apt-get update'],
@@ -29,36 +25,6 @@ class debian_base {
     path        => '/usr/bin/',
     command     => 'apt-get update',
     refreshonly => true,
-  }
-
-  if !defined(Package['wget']) {
-    package { 'wget':
-      ensure => installed,
-    }
-  }
- 
-  if !defined(Package['vim']){
-    package {'vim':
-      ensure => installed,
-    }
-  }
-
-  if !defined(Package['nano']){
-    package {'nano':
-      ensure => purged,
-    }
-  }
-
-  if !defined(Package['bash-completion']) {
-    package {'bash-completion':
-      ensure => installed,
-    }
-  }
-
-  if !defined(Package['nmap']) {
-    package {'nmap':
-      ensure => installed,
-    }
   }
 
 }
